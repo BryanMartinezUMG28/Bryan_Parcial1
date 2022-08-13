@@ -9,5 +9,21 @@ package Clases;
  * @author bryan
  */
 public class LibroController {
+      NewClass[] tablaALumno;
+    int indiceArray;
+    
+    public LibroController(){
+        this.tablaALumno = new NewClass[100];
+        this.indiceArray=0;
+    }
+    
+     public void guardarAlumno(NewClass alumno){
+        this.tablaALumno[this.indiceArray]=alumno;  
+        this.indiceArray=this.indiceArray+1;
+    }
+    
+    public NewClass[] getAlumnos(){
+        return this.tablaALumno;
+    }
     
 }
