@@ -3,13 +3,134 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
+<!--
+BRYAN MARTINEZ 0909-20-6902 
+PROGRAMACION II - PARCIAL 1 AÑO 2022
+-->
 <html>
     <head>
-        <title>Parcial 1</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ 
     </head>
-    <body>
-        <div>Hola, mi nombre es Bryan, parcial 1 programacion II</div>
+    <body background="https://i.pinimg.com/originals/ea/61/23/ea6123f403ebc08658ee18d4908cd573.png">
+       
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Menu</a>
+                <div align="center" class="text-white">Parcial - Programacion II Bryan Martinez 0909-20-6903</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="index">Formulario</a>
+                    <a class="nav-link" href="Servlet">Datos</a>
+                    <a class="nav-link" href="#">Ayuda</a>
+                  </div>
+                </div>
+            </div>
+                  
+        </nav>
+       
+        
+        <div class="container">
+        <div class="row">
+            
+            <div class="col">               
+                <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">                                    
+                    <div align="center" class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">Registro de libros</div>
+                    
+                    <!-- FORMULARIO -->
+                    
+                    <form  action="Servlet"  class="row g-3 needs-validation" novalidate>
+                        
+                        <!-- Primer espacio para el codigo en el formulario -->
+                        
+                        <div class="col-md-4 position-relative">
+                            <label for="codigo" class="form-label">Codigo</label>
+                            <input type="text" class="form-control" name="cod" placeholder="0000-****" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">EXCELENTE</div>
+                            <div class="invalid-tooltip">DATOS INCOMPLETOS</div>
+                        </div>
+                        
+                        <!-- Segundo espacio para el nombre del libro en el formulario -->
+                        
+                        <div class="col-md-4 position-relative">
+                            <label for="nombre" class="form-label">Nombre de libro</label>
+                            <input type="text" class="form-control" name="primero" placeholder="Libro" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">EXCELENTE</div>
+                            <div class="invalid-tooltip">DATOS INCOMPLETOS.</div>
+                        </div>
+                        
+                        <!-- Tercer espacio para tipo de pasta del libro en el formulario -->
+                        
+                        <div class="col-md-4 position-relative">
+                            <label for="apellido" class="form-label">Tipo de pasta</label>
+                            <input type="text" class="form-control" name="segundo" placeholder="T/Pasta gruesa" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">EXCELENTE</div>
+                            <div class="invalid-tooltip">DATOS INCOMPLETOS</div>
+                        </div>
+                        
+                        <!-- Cuarto espacio para la editorial en el formulario -->
+                        
+                        <div class="col-md-4 position-relative">
+                            <label for="direccion" class="form-label">Editorial</label>
+                            <input type="text" class="form-control" name="ubicacion" placeholder="Edit. Ejemplo" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">EXCELENTE</div>
+                            <div class="invalid-tooltip">DATOS INCOMPLETOS</div>
+                        </div>
+                        
+                        <!-- Quinto espacio para año de el libro en el formulario -->
+                       
+                        <div class="col-md-4 position-relative">
+                            <label for="telefono" class="form-label">Año publicado</label>
+                            <input type="number" class="form-control" name="celular" placeholder="2000" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">EXCELENTE</div>
+                            <div class="invalid-tooltip">DATOS INCOMPLETOS</div>
+                        </div>
+                        
+                        <p>¿Deseas registrarte?, llena el formulario completo con tus datos, y registrate.</p>
+                            
+                        <!-- Boton enviar -->
+                        
+                        <button class="btn btn-dark fw-bold" type="submit">Enviar</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        
+        <script>        
+    (function () {
+      'use strict'
+
+      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+      var forms = document.querySelectorAll('.needs-validation')
+
+      //Recorremos los forms y evitamos en envío sin validacion
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+        </script>    
     </body>
 </html>
